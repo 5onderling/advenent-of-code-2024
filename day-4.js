@@ -65,17 +65,6 @@ const input = readFileSync("./inputs/day-4.txt", { encoding: "utf8" });
 
 // Part two
 {
-  const inputd = `MMMSXXMASM
-MSAMXMSMSA
-AMXSXMAAMM
-MSAMASMSMX
-XMASAMXAMM
-XXAMMXXAMA
-SMSMSASXSS
-SAXAMASAAA
-MAMMMXMMMM
-MXMXAXMASX`;
-
   const lineLength = input.split(/\n/)[0].length;
 
   const inputSingleLine = input.replace(/\n/g, "...");
