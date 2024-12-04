@@ -69,18 +69,15 @@ const input = readFileSync("./inputs/day-4.txt", { encoding: "utf8" });
 
   const inputSingleLine = input.replace(/\n/g, "...");
 
-  const xes = Array.from(
-    inputSingleLine.matchAll(
-      new RegExp(
-        `(?<=(M.M.{${lineLength + 1}}A.{${lineLength + 1}}S.S))|(?<=(M.S.{${
-          lineLength + 1
-        }}A.{${lineLength + 1}}M.S))|(?<=(S.M.{${lineLength + 1}}A.{${
-          lineLength + 1
-        }}S.M))|(?<=(S.S.{${lineLength + 1}}A.{${lineLength + 1}}M.M))`,
-        "g"
-      )
-    ),
-    (match) => match.index % lineLength
+  const xes = inputSingleLine.match(
+    new RegExp(
+      `(?<=(M.M.{${lineLength + 1}}A.{${lineLength + 1}}S.S))|(?<=(M.S.{${
+        lineLength + 1
+      }}A.{${lineLength + 1}}M.S))|(?<=(S.M.{${lineLength + 1}}A.{${
+        lineLength + 1
+      }}S.M))|(?<=(S.S.{${lineLength + 1}}A.{${lineLength + 1}}M.M))`,
+      "g"
+    )
   );
 
   console.log(xes.length);
